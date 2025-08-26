@@ -22,9 +22,5 @@ This repository provides a basic framework for FastAPI projects, designed to hel
    ```
 3. Access the API at `http://localhost:8000/`
 
-## How to use as a template
-- Mark this repository as a template on GitHub.
-- Click "Use this template" to create a new project based on this structure.
-
 ## License
 MIT
