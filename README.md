@@ -21,3 +21,6 @@ This repository provides a basic framework for FastAPI projects, designed to hel
    docker compose up --build
    ```
 3. Access the API at `http://localhost:8000/`
+
+## License
+This template is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
