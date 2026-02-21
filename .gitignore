@@ -9,5 +9,4 @@ env/
 ENV/
 .DS_Store
 .idea/
-.vscode/
 *.log
