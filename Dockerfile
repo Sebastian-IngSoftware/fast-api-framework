@@ -8,13 +8,14 @@ WORKDIR /app
 COPY requirements.txt .
 
 # Instala las dependencias
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir --root-user-action=ignore --disable-pip-version-check -r requirements.txt
+
+# Crea un usuario no-root con ID 1000
+RUN useradd -m -u 1000 appuser && \
+    chown -R appuser:appuser /app
+
+# Cambia al usuario no-root
+USER appuser
 
 # Copia el resto de la aplicación
-COPY . .
-
-# Expone el puerto en el que correrá FastAPI
-EXPOSE 8000
-
-# Comando para correr la app con Uvicorn
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+COPY --chown=appuser:appuser . .

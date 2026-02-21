@@ -1,5 +1,5 @@
 services:
-  web:
+  app:
     build: .
     container_name: fast-api-framework
     ports:
@@ -7,3 +7,4 @@ services:
     volumes:
       - .:/app
     restart: unless-stopped
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
