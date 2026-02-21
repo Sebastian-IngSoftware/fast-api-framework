@@ -27,7 +27,7 @@ This repository provides a basic framework for FastAPI projects, designed to hel
 
 ---
 
-## Naive Bayes - Spam Classifier
+## Naive Bayes - Spam Classifier - Example
 
 ### What is it?
 A **Gaussian Naive Bayes** implementation to classify emails as **spam** or **ham (not spam)** based on 5 email features.
