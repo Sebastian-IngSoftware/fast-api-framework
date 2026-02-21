@@ -1,21 +1,21 @@
-# Imagen base oficial de Python
+# Official Python base image
 FROM python:3.13-slim
 
-# Crea un directorio de trabajo en el contenedor
+# Create a working directory in the container
 WORKDIR /app
 
-# Copia el archivo de dependencias
+# Copy the dependencies file
 COPY requirements.txt .
 
-# Instala las dependencias
+# Install dependencies
 RUN pip install --no-cache-dir --root-user-action=ignore --disable-pip-version-check -r requirements.txt
 
-# Crea un usuario no-root con ID 1000
+# Create a non-root user with ID 1000
 RUN useradd -m -u 1000 appuser && \
     chown -R appuser:appuser /app
 
-# Cambia al usuario no-root
+# Switch to non-root user
 USER appuser
 
-# Copia el resto de la aplicación
+# Copy the rest of the application
 COPY --chown=appuser:appuser . .
